@@ -1,0 +1,447 @@
+body{
+    font-family: 'Varela Round', sans-serif;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.container{
+    width: 80%;
+    margin: auto;
+}
+.clear{
+    clear: both;
+}
+.overlayer{
+    position:absolute;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100%;
+}
+h1 , h2 ,h3, h4, h5 ,h6{
+    font-family: montserrat,sans-serif;
+    font-size: 30px;
+}
+button{
+    font-family: inherit ;
+}
+
+.hover-opacity{
+    transition: opacity 0.5s;
+}
+
+.hover-opacity:hover{
+opacity: 0.8;
+}
+a{
+    text-decoration: none;
+
+}
+
+
+
+
+/* header */
+.header{
+    background-color: transparent;
+    position: fixed;
+    width: 100%;
+    z-index: 10;
+
+}
+.header .logo{
+    width: 40%;
+    float: left;
+
+}
+.header .logo img{
+    width: 20%;
+    margin: 12px;
+}
+
+.header .navbar{
+    width: 60%;
+    float: left;
+}
+.navbar{
+    text-align: right;
+}
+.navbar > li{
+    list-style: none;   
+    display: inline-block;
+}
+
+.navbar > li > a{
+    text-decoration: none;
+    display: block;
+    color: white;
+    padding:30px 12px;
+    
+
+}
+.navbar > li > a::after{
+    content: "";
+    width:0;
+    transition: width 0.5s;
+}
+.navbar > li > a:hover::after,
+.navbar > li > a.active::after {
+    content: "";
+    display: block;
+    background-color: royalblue;
+    width: 100%;
+    height: 3px;
+    margin-top: 2px;
+} 
+.dropdown{
+    position: relative;
+}
+
+.dropdown-menu{
+    text-align: center;
+    padding: 3px;
+    position: absolute;
+    list-style: none;
+    width: 118px;
+    height: 40px;
+    background-color: royalblue;
+    left: -23px;
+    top: -16px;
+    opacity: 0;
+    visibility:hidden;
+    transition: opacity 1s;
+}
+
+.dropdown-menu a{
+    color: white;
+    display: block;
+    padding: 8px;
+} 
+
+.navbar > li > a:hover + ul > li{
+    opacity: 1;
+    visibility:visible;
+}
+
+
+/* Home section */
+.home{
+    background-image:url(../images/background/background1.webp) ;
+    height: 100vh;
+    background-size: cover;
+    position: relative;
+
+}
+.home-content{
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+}
+.home .title{
+    text-transform: uppercase;
+    color: white;
+    font-size: 30px;
+}
+.home .home-desc{
+    margin: 15px 0px;
+    color: white;
+    letter-spacing: 1px;
+
+}
+.home .btn{
+    width:150px;
+    height: 50px;
+    border-radius: 5px;
+    border: 0;
+    cursor: pointer;
+    font-size: 15px;
+    
+}
+.home .btn-start{
+    margin-right: 10px ;
+    background-color: white;
+}
+.home .btn-learn{
+    background-color: royalblue;
+    color: white;
+}
+
+/* About */
+
+.titles{
+    text-align: center;
+    text-transform: capitalize;
+    margin-top: 100px;
+}
+.under:after{
+    content: "";
+    display: block;
+    background-color: royalblue;
+    margin: auto;
+    width: 2%;
+    height: 3px;
+    margin-top: 10px;
+
+}
+
+
+.card{
+    width: 30%;
+    float: left;
+    text-align: center;
+    padding: 10px;
+    margin-top: 50px ;
+    border: 1px solid #e8e8e8;
+    position: relative;
+    
+}
+.mg{
+    margin-left: 5%;
+    margin-right: 5%;
+}
+.card h3{
+    margin: 20px;
+    text-transform: capitalize;
+}
+.card p{
+    margin-bottom: 10px;
+    line-height: 1.6;
+    color:#999
+}
+.card a{
+    color: royalblue;
+    display: block;
+    margin-bottom: 20px;
+}
+
+i{
+    color: royalblue;
+}
+/* 
+.card:hover{
+    background-color: black;
+    color: white;
+    transition: 0.5s;
+
+} */
+
+
+
+
+.card::after{
+    content:"";
+    display: block;
+    position: absolute;
+    width:0;
+    transition: width 0.5s ;
+    z-index: -1;
+    
+}
+.card:hover::after{ 
+    width:100%;
+    background-color: #333 ;
+    height: 100%;
+    top: 0;
+    left: 0;
+    
+    
+}
+
+.card:hover h3{
+    color: white;
+}
+
+.portoflio{
+
+    background-color: #f9f9f9;
+}
+.portflio-item{
+    position: relative;
+    width: 30%;
+    float: left;
+    padding: 20px;
+}
+.portflio-item img{
+    width:100%;
+    margin-bottom: 5%;
+}
+.mg2 , .mg3{
+    margin-left: 5%;
+    margin-right: 5%;
+} 
+
+.portflio-item .layer-content{
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background-color: rgba(0, 0, 0, 0.5);
+visibility: hidden;
+opacity: 0;
+transition: opacity 0.5s ;
+
+}
+
+
+.layer-info{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.5s ;
+    
+}
+.h-pic{
+    font-size: 20px;
+    color: white;
+    padding:12px;
+    position: relative;
+    top: 10px;
+    transition: top 0.5s;
+    transition-delay: 0.2s;
+}
+.tit-pic{
+    color: royalblue;
+    text-transform: uppercase;
+    padding-top: 6px;
+    position: relative;
+    top: 10px;
+    transition: top 0.5s;
+    transition-delay: 0.3s;
+}
+.fa-search{
+    padding:14px;
+    background-color: royalblue;
+    color:white;
+    cursor: pointer;
+    position: relative;
+    top: 10px;
+    transition: top 0.5s;
+    transition-delay: 0.3s;
+
+}
+
+
+.portflio-item:hover .layer-info,
+.portflio-item:hover .layer-content
+{   
+    visibility:visible;
+    opacity: 1;
+}
+.portflio-item:hover .tit-pic ,
+.portflio-item:hover  .h-pic,
+.portflio-item:hover .fa-search{
+top:0;
+}
+
+
+
+.cards{
+    width: 30%;
+    float: left;
+    padding: 20px;
+    margin-top: 50px;
+    border: 1px solid #e8e8e8;
+    position: relative;
+}
+.heading{
+    display: inline-block;
+    text-transform: capitalize;
+}
+.para{
+    padding-left: 26px;
+    padding-top: 20px;
+    line-height: 1.6;
+    color:#999
+
+}
+.cards i{
+    padding: 10px;
+}
+
+
+.cards::after{
+    content:"";
+    display: block;
+    position: absolute;
+    width:0;
+    transition: width 0.5s ;
+    z-index: -1;
+    
+}
+.cards:hover::after{ 
+    width:100%;
+    background-color: #333 ;
+    height: 100%;
+    top: 0;
+    left: 0;
+    
+    
+}
+
+.cards:hover .heading{
+    color: white;
+}
+.titles-spec{
+text-align: left;
+    text-transform: capitalize;
+    
+}
+.under-spec:after{
+    content: "";
+    display: block;
+    background-color: royalblue;
+    width: 5%;
+    height: 3px;
+    margin-top: 10px;
+
+}
+.choose{
+    background-color: #f9f9f9;
+    width: 100%;
+    height: 100%;
+    margin-top: 100px;
+    
+
+}
+.para-side , .img-side{
+    float: left;
+    width:50%;
+    margin-top: 100px;
+}
+
+.img-side img{
+    width: 100%;
+}
+.para-spec{
+    color:#333;
+    margin-top: 20px;
+    line-height: 1.6;
+}
+.para-side i{
+    
+    padding: 5px;
+    margin: 5px;
+
+}
+.para-side  span{
+
+color:#333;
+
+
+}
+
+
+
+
+
+
+
+
